@@ -20,7 +20,8 @@ os.makedirs(PDF_DIR, exist_ok=True)
 
 # **Delete all documents when a new session starts**
 if "session_initialized" not in st.session_state:
-    shutil.rmtree(PDF_DIR)  # Delete all files
+    if os.path.exists(PDF_DIR):  # Check if directory exists before deleting
+        shutil.rmtree(PDF_DIR)  # Delete all files
     os.makedirs(PDF_DIR, exist_ok=True)  # Recreate directory
     st.session_state.session_initialized = True  # Mark session as initialized
 
