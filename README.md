@@ -6,4 +6,6 @@ To install dependancies:
 Command to run the app:  
 ```streamlit run app.py```
 
-
+---
+### Live website:  
+https://rag-pdf-q-and-a.streamlit.app/
