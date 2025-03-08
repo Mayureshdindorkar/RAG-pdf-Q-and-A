@@ -10,7 +10,7 @@ from langchain.chains import create_retrieval_chain
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from dotenv import load_dotenv
-
+import torch
 
 torch.classes.__path__ = [os.path.join(torch.__path__[0], torch.classes.__file__)]  # To avoid a error
 
