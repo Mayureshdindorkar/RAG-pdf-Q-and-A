@@ -126,11 +126,28 @@ if user_prompt:
                         st.write(doc.page_content)
                         st.write('-' * 40)
         else:       # If the context dont contain the answer
-            response = llm.invoke(f'Provide detailed answer for {user_prompt}')
+            detailed_prompt = f"""
+            You are a knowledgeable AI assistant.
+            The user has asked the following question:
+
+            {user_prompt}
+
+            Since no relevant documents were found in the provided context, generate a detailed, in-depth, and well-structured answer based on your general knowledge. 
+            Ensure that the response includes explanations, examples, and necessary background information.
+            """
+            response = llm.invoke(detailed_prompt)
             answer = response.content.strip()
     else:
         # If user didnt uploaded any file, directly query LLM
-        response = llm.invoke(f'Provide detailed answer for {user_prompt}')
+        detailed_prompt = f"""
+        You are a knowledgeable AI assistant.
+        The user has asked the following question:
+
+        {user_prompt}
+
+        Generate a long, detailed, and well-structured response. Provide thorough explanations, examples, and additional relevant information.
+        """
+        response = llm.invoke(detailed_prompt)
         st.write(response.content.strip())
         
         if 'context' in st.session_state:
