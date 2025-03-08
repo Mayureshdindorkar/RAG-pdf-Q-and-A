@@ -130,7 +130,7 @@ if user_prompt:
             answer = response.content.strip()
     else:
         # If user didnt uploaded any file, directly query LLM
-        response = llm.invoke(user_prompt)
+        response = llm.invoke(f'Provide detailed answer for {user_prompt}')
         st.write(response.content.strip())
         
         if 'context' in st.session_state:
