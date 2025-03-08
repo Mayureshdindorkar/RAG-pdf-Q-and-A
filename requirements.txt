@@ -5,3 +5,4 @@ langchain_huggingface
 langchain_community
 streamlit
 faiss-cpu
+pypdf
