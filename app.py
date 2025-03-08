@@ -123,7 +123,7 @@ if user_prompt:
                         st.write(doc.page_content)
                         st.write('-' * 40)
         else:       # If the context dont contain the answer
-            response = llm.invoke(user_prompt)
+            response = llm.invoke(f'Provide detailed answer for {user_prompt}')
             answer = response.content.strip()
     else:
         # If user didnt uploaded any file, directly query LLM
