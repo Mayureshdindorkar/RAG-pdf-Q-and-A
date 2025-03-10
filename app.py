@@ -64,7 +64,7 @@ prompt = ChatPromptTemplate.from_template(
 )
 
 ######################### Streamlit UI ##########################
-st.title("Document Question Answering (Q & A) using RAG")
+st.title("Document Question Answering using RAG")
 
 # PDF Upload Section
 uploaded_files = st.file_uploader("Upload documents", type=["pdf"], accept_multiple_files=True)
