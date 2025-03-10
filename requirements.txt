@@ -1,4 +1,4 @@
-langchain_huggingface==0.1.12
+langchain_huggingface==0.1.1
 langchain_community==0.3.19
 streamlit==1.37.1
 faiss-cpu==1.10.0
